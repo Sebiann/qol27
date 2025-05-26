@@ -1,24 +1,24 @@
 {
   "schemaVersion": 1,
-  "id": "logoutcoords",
+  "id": "qol27",
   "version": "${version}",
-  "name": "Logout Coords",
-  "description": "logs the coords when loging out",
+  "name": "qol27",
+  "description": "Multiple Quality of Life improvements for Minecraft 1.21.5",
   "authors": [
     "Sebiann"
   ],
   "contact": {
     "email": "code@sebiann.moe",
     "homepage": "https://sebiann.moe",
-    "issues": "https://github.com/Sebiann/log_out_coords/issues",
-    "sources": "https://github.com/Sebiann/log_out_coords"
+    "issues": "https://github.com/Sebiann/qol27/issues",
+    "sources": "https://github.com/Sebiann/qol27"
   },
   "license": "GPL-3.0",
-  "icon": "assets/logoutcoords/icon.png",
-  "environment": "*",
+  "icon": "assets/qol27/icon.png",
+  "environment": "client",
   "entrypoints": {
-    "main": [
-      "moe.sebiann.logoutcoords.LogoutCoords"
+    "client": [
+      "moe.sebiann.qol27.QoL27"
     ]
   },
   "mixins": [],
