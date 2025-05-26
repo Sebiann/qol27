@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "qol27",
   "version": "${version}",
-  "name": "qol27",
+  "name": "QoL 27",
   "description": "Multiple Quality of Life improvements for Minecraft 1.21.5",
   "authors": [
     "Sebiann"
@@ -17,9 +17,7 @@
   "icon": "assets/qol27/icon.png",
   "environment": "client",
   "entrypoints": {
-    "client": [
-      "moe.sebiann.qol27.QoL27"
-    ]
+    "client": [ "moe.sebiann.qol27.QoL27" ]
   },
   "mixins": [],
   "depends": {

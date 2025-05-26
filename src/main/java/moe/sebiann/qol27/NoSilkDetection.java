@@ -13,7 +13,7 @@ import net.minecraft.util.ActionResult;
 import java.util.Set;
 
 public class NoSilkDetection {
-    public static void initialize() {
+    public static void initialize(moe.sebiann.qol27.QoL27Config config) {
         AttackBlockCallback.EVENT.register((player, world, hand, pos, direction) -> {
             BlockState state = world.getBlockState(pos);
             if (state.getBlock() == Blocks.ENDER_CHEST) {
@@ -24,16 +24,14 @@ public class NoSilkDetection {
                 Set<RegistryEntry<Enchantment>> enchantments = itemStack.getEnchantments().getEnchantments();
                 boolean hasNoSilkTouch = enchantments.stream().noneMatch(enchantmentRegistryEntry -> enchantmentRegistryEntry.getKey().get().getValue().getPath().equalsIgnoreCase("silk_touch"));
 
-                if (isPickaxe && hasNoSilkTouch && !player.isSneaking()) {
-//                    player.sendMessage(
-//                            Text.literal("§cYou need Silk Touch to safely mine Ender Chests!"),
-//                            false // false = not in action bar, true = in action bar
-//                    );
+                if (config.sneakOverridesDetection() && player.isSneaking()) {
+                    // If the player is sneaking, we allow the action regardless of enchantments
+                    return ActionResult.PASS;
+                } else if (isPickaxe && hasNoSilkTouch) {
                     return ActionResult.FAIL;
                 } else {
                     return ActionResult.PASS;
                 }
-
             } else {
                 return ActionResult.PASS;
             }

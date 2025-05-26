@@ -1,4 +1,4 @@
-# Fabric Template Mod
+# QoL 27
 
 ## Contributing
 
