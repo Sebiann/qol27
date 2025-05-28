@@ -13,8 +13,13 @@ import net.minecraft.util.ActionResult;
 import java.util.Set;
 
 public class NoSilkDetection {
-    public static void initialize(moe.sebiann.qol27.QoL27Config config) {
+    public static void initialize() {
+        moe.sebiann.qol27.QoL27Config config = QoL27.getConfig();
+
         AttackBlockCallback.EVENT.register((player, world, hand, pos, direction) -> {
+            if (!config.noSilkDetectionEnabled()) {
+                return ActionResult.PASS;
+            }
             BlockState state = world.getBlockState(pos);
             if (state.getBlock() == Blocks.ENDER_CHEST) {
                 ItemStack itemStack = player.getInventory().getSelectedStack();

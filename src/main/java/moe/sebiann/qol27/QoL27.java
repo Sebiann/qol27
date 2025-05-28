@@ -12,8 +12,12 @@ public class QoL27 implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
-        NoSilkDetection.initialize(CONFIG);
+        NoSilkDetection.initialize();
 
         LOGGER.info("{} initialized!", MOD_ID);
+    }
+
+    public static QoL27Config getConfig() {
+        return CONFIG;
     }
 }

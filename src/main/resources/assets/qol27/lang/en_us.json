@@ -1,4 +1,6 @@
 {
   "text.config.qol27-config.title":"QOL27 Config",
-  "text.config.qol27-config.option.sneakOverridesDetection":"Sneak Overrides Detection"
+  "text.config.qol27-config.option.noSilkDetectionEnabled":"No Silk Touch Detection",
+  "text.config.qol27-config.option.sneakOverridesDetection":"Sneak Overrides Detection",
+  "text.config.qol27-config.option.saveCoordsOnLogout":"Save Coordinates on Logout"
 }
