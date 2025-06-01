@@ -17,13 +17,20 @@
   "icon": "assets/qol27/icon.png",
   "environment": "client",
   "entrypoints": {
-    "client": [ "moe.sebiann.qol27.QoL27" ]
+    "client": ["moe.sebiann.qol27.client.QoL27Client"],
+    "main": ["moe.sebiann.qol27.QoL27"],
+    "modmenu": ["moe.sebiann.qol27.config.ModMenuIntegration27"]
   },
   "mixins": [],
   "depends": {
     "fabricloader": ">=${loader_version}",
     "fabric": "*",
-    "minecraft": "${minecraft_version}",
-    "owo": "*"
+    "minecraft": "${minecraft_version}"
+  },
+  "custom": {
+    "modmenu": {
+      "links": {},
+      "badges": []
+    }
   }
 }
