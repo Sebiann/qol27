@@ -1,4 +1,4 @@
-package moe.sebiann.qol27;
+package moe.sebiann.qol27.client;
 
 import moe.sebiann.qol27.config.QoL27Config;
 import net.fabricmc.api.ClientModInitializer;
@@ -13,6 +13,7 @@ public class QoL27Client implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         NoSilkDetection.initialize();
+        WoodStrippingDetection.initialize();
 
         LOGGER.info("{} initialized!", MOD_ID);
     }

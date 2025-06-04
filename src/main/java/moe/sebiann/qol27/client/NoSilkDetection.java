@@ -1,4 +1,4 @@
-package moe.sebiann.qol27;
+package moe.sebiann.qol27.client;
 
 import moe.sebiann.qol27.config.QoL27Config;
 import net.fabricmc.fabric.api.event.player.AttackBlockCallback;

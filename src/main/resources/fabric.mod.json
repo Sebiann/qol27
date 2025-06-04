@@ -17,7 +17,7 @@
   "icon": "assets/qol27/icon.png",
   "environment": "client",
   "entrypoints": {
-    "client": ["moe.sebiann.qol27.QoL27Client"]
+    "client": ["moe.sebiann.qol27.client.QoL27Client"]
   },
   "mixins": [],
   "depends": {
@@ -25,5 +25,6 @@
     "fabric": "*",
     "minecraft": "${minecraft_version}",
     "owo": "*"
-  }
+  },
+  "accessWidener": "WoodStrippingDetection.accesswidener"
 }
