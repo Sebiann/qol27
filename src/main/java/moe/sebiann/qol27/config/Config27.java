@@ -7,14 +7,14 @@ import io.wispforest.owo.config.annotation.SectionHeader;
 @Modmenu(modId = "qol27")
 @Config(name = "qol27-config", wrapperName = "QoL27Config")
 public class Config27 {
-    @SectionHeader("No Silk Touch Detection")
+    @SectionHeader("noSilkTouchDetection")
     public boolean noSilkDetectionEnabled = true;
     public boolean sneakOverridesDetection = true;
 
-    @SectionHeader("Wood Stripping Detection")
+    @SectionHeader("woodStrippingDetection")
     public boolean noStrippingEnabled = true;
     public boolean sneakOverridesStripping = true;
 
-    @SectionHeader("Save Coordinates on Logout")
-    public boolean saveCoordsOnLogout = true;
+    // @SectionHeader("saveCoordsOnLogout")
+    // public boolean saveCoordsOnLogout = true;
 }
