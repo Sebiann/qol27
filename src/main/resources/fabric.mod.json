@@ -17,7 +17,7 @@
   "icon": "assets/qol27/icon.png",
   "environment": "client",
   "entrypoints": {
-    "client": [ "moe.sebiann.qol27.QoL27" ]
+    "client": ["moe.sebiann.qol27.QoL27Client"]
   },
   "mixins": [],
   "depends": {

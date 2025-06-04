@@ -1,5 +1,6 @@
 package moe.sebiann.qol27;
 
+import moe.sebiann.qol27.config.QoL27Config;
 import net.fabricmc.fabric.api.event.player.AttackBlockCallback;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -14,7 +15,7 @@ import java.util.Set;
 
 public class NoSilkDetection {
     public static void initialize() {
-        moe.sebiann.qol27.QoL27Config config = QoL27.getConfig();
+        QoL27Config config = QoL27Client.getConfig();
 
         AttackBlockCallback.EVENT.register((player, world, hand, pos, direction) -> {
             if (!config.noSilkDetectionEnabled()) {
