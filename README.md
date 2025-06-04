@@ -1,5 +1,9 @@
 # QoL 27
 
+Currently the main features are:
+- it blocking you from mining an enderchest without silktouch except if you sneak (configurable)
+- it blocking you from stripping wood except if you sneak (configurable)
+
 ## Contributing
 
 1. Fork the repository.
