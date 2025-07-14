@@ -26,5 +26,7 @@
     "minecraft": "${minecraft_version}",
     "owo": "*"
   },
-  "accessWidener": "WoodStrippingDetection.accesswidener"
+  "injectors": {
+    "defaultRequire": 1
+  }
 }
