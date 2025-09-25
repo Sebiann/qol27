@@ -17,4 +17,9 @@ public class Config27 {
 
     // @SectionHeader("saveCoordsOnLogout")
     // public boolean saveCoordsOnLogout = true;
+
+    @SectionHeader("noCarpetsOnCarpets")
+    public boolean noCarpetsOnCarpetsEnabled = true;
+    public boolean sneakOverridesCarpetPlacing = true;
+
 }

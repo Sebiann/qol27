@@ -14,6 +14,7 @@ public class QoL27Client implements ClientModInitializer {
     public void onInitializeClient() {
         NoSilkDetection.initialize();
         WoodStrippingDetection.initialize();
+        CarpetSafety.initialize();
 
         LOGGER.info("{} initialized!", MOD_ID);
     }
