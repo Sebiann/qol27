@@ -10,5 +10,5 @@
   "text.config.qol27-config.option.saveCoordsOnLogout":"Save Coordinates on Logout",
   "text.config.qol27-config.section.noCarpetsOnCarpets":"No Carpets on Carpets",
   "text.config.qol27-config.option.noCarpetsOnCarpetsEnabled":"No Carpets on Carpets Enabled",
-  "text.config.qol27-config.option.sneakOverridesCarpetPlacing":"Sneak Overrides Carpet Placing",
+  "text.config.qol27-config.option.sneakOverridesCarpetPlacing":"Sneak Overrides Carpet Placing"
 }
