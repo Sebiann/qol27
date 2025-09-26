@@ -1,38 +1,37 @@
 package moe.sebiann.qol27.client;
 
-import moe.sebiann.qol27.config.QoL27Config;
+import moe.sebiann.qol27.config.Config;
 import net.fabricmc.fabric.api.event.player.UseBlockCallback;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.item.*;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.item.*;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.core.BlockPos;
 
 
 public class WoodStrippingDetection {
     public static void initialize() {
-        QoL27Config config = QoL27Client.getConfig();
 
         UseBlockCallback.EVENT.register((player, world, hand, hitResult) -> {
-            if (!config.noStrippingEnabled()) {
-                return ActionResult.PASS;
+            if (!Config.WoodStripping.INSTANCE.getEnabled()) {
+                return InteractionResult.PASS;
             }
-            if (!world.isClient) return ActionResult.PASS;
+            if (!world.isClientSide) return InteractionResult.PASS;
 
-            ItemStack heldItem = player.getStackInHand(hand);
-            if (!(heldItem.getItem() instanceof AxeItem)) return ActionResult.PASS;
+            ItemStack heldItem = player.getItemInHand(hand);
+            if (!(heldItem.getItem() instanceof AxeItem)) return InteractionResult.PASS;
 
             BlockPos pos = hitResult.getBlockPos();
             BlockState state = world.getBlockState(pos);
 
-            if (config.sneakOverridesStripping() && player.isSneaking()) {
+            if (Config.WoodStripping.INSTANCE.getSneakOverrides() && player.isShiftKeyDown()) {
                 // If the player is sneaking, we allow the action regardless of enchantments
-                return ActionResult.PASS;
+                return InteractionResult.PASS;
             } else if (isStrippableWood(state.getBlock())) {
-                return ActionResult.FAIL;
+                return InteractionResult.FAIL;
             } else {
-                return ActionResult.PASS;
+                return InteractionResult.PASS;
             }
         });
     }

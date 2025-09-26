@@ -1,15 +1,15 @@
 package moe.sebiann.qol27.client;
 
-import moe.sebiann.qol27.config.QoL27Config;
+import moe.sebiann.qol27.config.Config;
 import net.fabricmc.fabric.api.event.player.UseBlockCallback;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.CarpetBlock;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.CarpetBlock;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.core.BlockPos;
 
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -18,26 +18,24 @@ import java.util.stream.Stream;
 
 public class CarpetSafety {
     public static void initialize() {
-        QoL27Config config = QoL27Client.getConfig();
-
         UseBlockCallback.EVENT.register((player, world, hand, hitResult) -> {
-            if (!config.noCarpetsOnCarpetsEnabled()) {
-                return ActionResult.PASS;
+            if (!Config.Carpets.INSTANCE.getEnabled()) {
+                return InteractionResult.PASS;
             }
-            if (!world.isClient) return ActionResult.PASS;
+            if (!world.isClientSide) return InteractionResult.PASS;
 
-            ItemStack heldItem = player.getStackInHand(hand);
-            if (!CARPET_ITEMS.contains(heldItem.getItem())) return ActionResult.PASS;
+            ItemStack heldItem = player.getItemInHand(hand);
+            if (!CARPET_ITEMS.contains(heldItem.getItem())) return InteractionResult.PASS;
 
             BlockPos pos = hitResult.getBlockPos();
             BlockState state = world.getBlockState(pos);
 
-            if (config.sneakOverridesCarpetPlacing() && player.isSneaking()) {
-                return ActionResult.PASS;
+            if (Config.Carpets.INSTANCE.getSneakOverrides() && player.isShiftKeyDown()) {
+                return InteractionResult.PASS;
             } else if (state.getBlock() instanceof CarpetBlock) {
-                return ActionResult.FAIL;
+                return InteractionResult.FAIL;
             } else {
-                return ActionResult.PASS;
+                return InteractionResult.PASS;
             }
         });
     }
