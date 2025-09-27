@@ -16,22 +16,22 @@ object WoodStrippingDetection {
     fun initialize() {
         UseBlockCallback.EVENT.register(UseBlockCallback { player: Player?, world: Level?, hand: InteractionHand?, hitResult: BlockHitResult? ->
             if (!enabled) {
-                InteractionResult.PASS
+                return@UseBlockCallback InteractionResult.PASS
             }
-            if (!world!!.isClientSide) InteractionResult.PASS
+            if (!world!!.isClientSide) return@UseBlockCallback InteractionResult.PASS
 
             val heldItem = player!!.getItemInHand(hand)
-            if (heldItem.item !is AxeItem) InteractionResult.PASS
+            if (heldItem.item !is AxeItem) return@UseBlockCallback InteractionResult.PASS
 
             val pos = hitResult!!.blockPos
             val state = world.getBlockState(pos)
             if (sneakOverrides && player.isShiftKeyDown) {
                 // If the player is sneaking, we allow the action regardless of enchantments
-                InteractionResult.PASS
+                return@UseBlockCallback InteractionResult.PASS
             } else if (isStrippableWood(state.block)) {
-                InteractionResult.FAIL
+                return@UseBlockCallback InteractionResult.FAIL
             } else {
-                InteractionResult.PASS
+                return@UseBlockCallback InteractionResult.PASS
             }
         })
     }

@@ -19,21 +19,21 @@ object CarpetSafety {
     fun initialize() {
         UseBlockCallback.EVENT.register(UseBlockCallback { player: Player?, world: Level?, hand: InteractionHand?, hitResult: BlockHitResult? ->
             if (!enabled) {
-                InteractionResult.PASS
+                return@UseBlockCallback InteractionResult.PASS
             }
-            if (!world!!.isClientSide) InteractionResult.PASS
+            if (!world!!.isClientSide) return@UseBlockCallback InteractionResult.PASS
 
             val heldItem = player!!.getItemInHand(hand)
-            if (!CARPET_ITEMS.contains(heldItem.item)) InteractionResult.PASS
+            if (!CARPET_ITEMS.contains(heldItem.item)) return@UseBlockCallback InteractionResult.PASS
 
             val pos = hitResult!!.blockPos
             val state = world.getBlockState(pos)
             if (sneakOverrides && player.isShiftKeyDown) {
-                InteractionResult.PASS
+                return@UseBlockCallback InteractionResult.PASS
             } else if (state.block is CarpetBlock) {
-                InteractionResult.FAIL
+                return@UseBlockCallback InteractionResult.FAIL
             } else {
-                InteractionResult.PASS
+                return@UseBlockCallback InteractionResult.PASS
             }
         })
     }
