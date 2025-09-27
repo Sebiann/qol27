@@ -1,8 +1,9 @@
 # QoL 27
 
 Currently the main features are:
-- it blocking you from mining an enderchest without silktouch except if you sneak (configurable)
+- it blocking you from mining an enderchest and glass without silktouch except if you sneak (configurable)
 - it blocking you from stripping wood except if you sneak (configurable)
+- it blocking you from placing carpets ontop of carpets except if you sneak (configurable)
 
 ## Contributing
 
