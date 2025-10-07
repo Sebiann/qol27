@@ -6,6 +6,8 @@
   "config.qol27.silk_touch.enderchest.description":"Blocks breaking enderchests without silk touch.",
   "config.qol27.silk_touch.glass.name":"Block Glass",
   "config.qol27.silk_touch.glass.description":"Blocks breaking glass without silk touch.",
+  "config.qol27.silk_touch.amethyst.name":"Block Budding Amethyst",
+  "config.qol27.silk_touch.amethyst.description":"Blocks breaking Budding Amethyst without sneaking.",
   "config.qol27.silk_touch.sneak_overrides.name":"Sneak Overrides it",
   "config.qol27.silk_touch.sneak_overrides.description":"Sneaking overrides the silk touch requirement.",
   "config.qol27.wood_stripping.name":"Wood Stripping",

@@ -16,6 +16,8 @@ class Config {
     @SerialEntry
     var silkTouchDetectionGlass: Boolean = true
     @SerialEntry
+    var silkTouchDetectionAmethyst: Boolean = true
+    @SerialEntry
     var silkTouchSneakOverrides: Boolean = true
 
     @SerialEntry
@@ -33,6 +35,8 @@ class Config {
             get() = handler.instance().silkTouchDetectionEnderchest
         val glass: Boolean
             get() = handler.instance().silkTouchDetectionGlass
+        val amethyst: Boolean
+            get() = handler.instance().silkTouchDetectionAmethyst
         val sneakOverrides: Boolean
             get() = handler.instance().silkTouchSneakOverrides
     }
@@ -86,6 +90,12 @@ class Config {
                         name(Component.translatable("config.qol27.silk_touch.glass.name"))
                         description(OptionDescription.of(Component.translatable("config.qol27.silk_touch.glass.description")))
                         binding(handler.instance()::silkTouchDetectionGlass, true)
+                        controller(tickBox())
+                    }
+                    options.register<Boolean>("silk_touch_detection_amethyst") {
+                        name(Component.translatable("config.qol27.silk_touch.amethyst.name"))
+                        description(OptionDescription.of(Component.translatable("config.qol27.silk_touch.amethyst.description")))
+                        binding(handler.instance()::silkTouchDetectionAmethyst, true)
                         controller(tickBox())
                     }
                     options.register<Boolean>("silk_touch_sneak_overrides") {
