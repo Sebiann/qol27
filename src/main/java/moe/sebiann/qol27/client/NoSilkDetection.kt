@@ -15,7 +15,10 @@ object NoSilkDetection {
             val heldItem: ItemStack = player.mainHandItem
             val enchantments = heldItem.enchantments.toString()
 
-            if (Config.SilkTouch.sneakOverrides && player.isShiftKeyDown) {
+            if (player.isCreative) {
+                InteractionResult.PASS
+            }
+            else if (Config.SilkTouch.sneakOverrides && player.isShiftKeyDown) {
                 InteractionResult.PASS
             }
             // Check for Ender Chest
