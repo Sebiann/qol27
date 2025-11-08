@@ -16,6 +16,8 @@ on:
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -30,7 +32,7 @@ jobs:
         run: chmod +x gradlew
 
       - name: Build with Gradle
-        run: ./gradlew build
+        run: ./gradlew remapjar
 
       - name: Publish to GitHub and Modrinth
         uses: Kir-Antipov/mc-publish@v3.3
@@ -41,9 +43,9 @@ jobs:
 
           files: build/libs/!(*-dev).jar
 
-          name: ${{ github.event.release.name }}
-          version: ${{ github.ref_name }}
-          changelog: ${{ github.event.release.body }}
+          name: ${{ inputs.version }}
+          version: ${{ inputs.version }}
+          changelog: ${{ inputs.changelog || 'Automated build' }}
 
           game-versions: |
             1.21.10
