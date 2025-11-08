@@ -21,5 +21,7 @@
   "config.qol27.carpets.enabled.name":"Enabled",
   "config.qol27.carpets.enabled.description":"You cannot place carpets on carpets",
   "config.qol27.carpets.sneak_overrides.name":"Sneak Overrides it",
-  "config.qol27.carpets.sneak_overrides.description":"Sneaking allows placing carpets on carpets."
+  "config.qol27.carpets.sneak_overrides.description":"Sneaking allows placing carpets on carpets.",
+  "key.category.qol27.qol27":"QoL27",
+  "key.qol27.toggle_fullbright":"Toggle Fullbright"
 }

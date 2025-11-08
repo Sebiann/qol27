@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "moe.sebiann.qol27.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [],
+  "client": [
+    "OptionsMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
