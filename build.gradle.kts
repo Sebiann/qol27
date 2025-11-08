@@ -2,9 +2,9 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "2.2.0"
-    id("fabric-loom") version "1.11-SNAPSHOT"
-    kotlin("plugin.serialization") version "2.0.20"
+    kotlin("jvm") version "2.2.21"
+    id("fabric-loom") version "1.12-SNAPSHOT"
+    kotlin("plugin.serialization") version "2.3.0-Beta2"
     id("maven-publish")
 }
 
@@ -55,8 +55,8 @@ dependencies {
     modImplementation("dev.isxander:yet-another-config-lib:${project.property("yacl_version")}")
     modImplementation("com.terraformersmc:modmenu:${project.property("modmenu_version")}")
 
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.8.1")
-    compileOnlyApi("org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.9.0-RC.2")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.9.0")
+    compileOnlyApi("org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.10.2")
 }
 
 tasks.processResources {
@@ -68,9 +68,10 @@ tasks.processResources {
     filesMatching("fabric.mod.json") {
         expand(
             "version" to project.version,
-            "minecraft_version" to project.property("minecraft_version"),
-            "loader_version" to project.property("loader_version"),
-            "kotlin_loader_version" to project.property("kotlin_loader_version")
+            "minecraft_version" to project.property("minecraft_version").toString(),
+            "loader_version" to project.property("loader_version").toString(),
+            "kotlin_loader_version" to project.property("kotlin_loader_version").toString(),
+            "yacl_version" to project.property("yacl_version").toString()
         )
     }
 }
