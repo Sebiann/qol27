@@ -5,6 +5,7 @@ Currently the main features are:
 - it blocking you from breaking budding amethyst without sneaking
 - it blocking you from stripping wood except if you sneak (configurable)
 - it blocking you from placing carpets ontop of carpets except if you sneak (configurable)
+- Fullbright toggle
 
 ## Contributing
 
