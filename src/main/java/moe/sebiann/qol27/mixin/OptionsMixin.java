@@ -59,7 +59,7 @@ public abstract class OptionsMixin implements GammaAccessor {
                         d -> (int)(d * 100.0)
                 ),
                 Codec.doubleRange(0.0, extended ? 100.0 : 1.0),
-                0.5,
+                1.0,
                 (value) -> {}
         );
     }

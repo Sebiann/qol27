@@ -5,7 +5,7 @@ import net.minecraft.client.Minecraft
 
 object FullbrightManager {
     private var isEnabled = false
-    private var originalGamma = 0.5
+    private var originalGamma = 1.0
 
     fun toggle() {
         val client = Minecraft.getInstance()
