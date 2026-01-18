@@ -56,7 +56,8 @@ public abstract class OptionsMixin implements GammaAccessor {
                 },
                 new OptionInstance.IntRange(0, maxValue).xmap(
                         i -> i / 100.0,
-                        d -> (int)(d * 100.0)
+                        d -> (int)(d * 100.0),
+                        true // I HAVE NO CLUE WHAT THIS DOES BUT IT BREAKS WITHOUT IT
                 ),
                 Codec.doubleRange(0.0, extended ? 100.0 : 1.0),
                 1.0,

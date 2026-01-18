@@ -17,7 +17,7 @@ import java.util.stream.Stream
 
 object CarpetSafety {
     fun initialize() {
-        UseBlockCallback.EVENT.register(UseBlockCallback { player: Player?, world: Level?, hand: InteractionHand?, hitResult: BlockHitResult? ->
+        UseBlockCallback.EVENT.register(UseBlockCallback { player: Player?, world: Level?, hand: InteractionHand, hitResult: BlockHitResult? ->
             if (!enabled) {
                 return@UseBlockCallback InteractionResult.PASS
             }

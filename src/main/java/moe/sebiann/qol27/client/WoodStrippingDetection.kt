@@ -14,7 +14,7 @@ import net.minecraft.world.phys.BlockHitResult
 
 object WoodStrippingDetection {
     fun initialize() {
-        UseBlockCallback.EVENT.register(UseBlockCallback { player: Player?, world: Level?, hand: InteractionHand?, hitResult: BlockHitResult? ->
+        UseBlockCallback.EVENT.register(UseBlockCallback { player: Player?, world: Level?, hand: InteractionHand, hitResult: BlockHitResult? ->
             if (!enabled) {
                 return@UseBlockCallback InteractionResult.PASS
             }
