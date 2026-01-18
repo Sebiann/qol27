@@ -41,4 +41,4 @@ jobs:
           changelog: ${{ inputs.changelog || 'Automated build' }}
 
           game-versions: |
-            1.21.10
+            1.21.11
