@@ -5,12 +5,11 @@ import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents
-import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper
+import net.fabricmc.fabric.api.client.keymapping.v1.KeyMappingHelper
 import net.minecraft.client.KeyMapping
 import com.mojang.blaze3d.platform.InputConstants
 import moe.sebiann.qol27.utils.FullbrightManager
 import moe.sebiann.qol27.utils.Resources
-import org.lwjgl.glfw.GLFW
 
 class QoL27Client : ClientModInitializer {
 
@@ -25,7 +24,7 @@ class QoL27Client : ClientModInitializer {
         LOGGER.info("{} initialized!", MOD_ID)
 
         // Register keybinding
-        toggleFullbrightKey = KeyBindingHelper.registerKeyBinding(
+        toggleFullbrightKey = KeyMappingHelper.registerKeyMapping(
             KeyMapping(
                 "key.qol27.toggle_fullbright",
                 InputConstants.Type.KEYSYM,
@@ -38,11 +37,10 @@ class QoL27Client : ClientModInitializer {
         ClientTickEvents.END_CLIENT_TICK.register { client ->
             while (toggleFullbrightKey.consumeClick()) {
                 FullbrightManager.toggle()
-                client.player?.displayClientMessage(
+                client.player?.sendOverlayMessage(
                     net.minecraft.network.chat.Component.literal(
                         "Fullbright: ${if (FullbrightManager.isEnabled()) "ON" else "OFF"}"
-                    ),
-                    true
+                    )
                 )
             }
         }
