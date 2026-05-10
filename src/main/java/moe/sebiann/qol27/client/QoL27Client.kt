@@ -20,6 +20,7 @@ class QoL27Client : ClientModInitializer {
         NoSilkDetection.initialize();
         WoodStrippingDetection.initialize()
         CarpetSafety.initialize()
+        RespawnAnchors.initialize()
 
         LOGGER.info("{} initialized!", MOD_ID)
 

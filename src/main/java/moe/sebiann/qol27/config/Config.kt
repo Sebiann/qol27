@@ -30,6 +30,11 @@ class Config {
     @SerialEntry
     var carpetsSneakOverrides: Boolean = true
 
+    @SerialEntry
+    var respawnAnchorDetection: Boolean = true
+    @SerialEntry
+    var respawnAnchorSneakOverrides: Boolean = true
+
     object SilkTouch {
         val enderchest: Boolean
             get() = handler.instance().silkTouchDetectionEnderchest
@@ -53,6 +58,13 @@ class Config {
             get() = handler.instance().carpetsCantPlaceOnCarpets
         val sneakOverrides: Boolean
             get() = handler.instance().carpetsSneakOverrides
+    }
+
+    object RespawnAnchors {
+        val enabled: Boolean
+            get() = handler.instance().respawnAnchorDetection
+        val sneakOverrides: Boolean
+            get() = handler.instance().respawnAnchorSneakOverrides
     }
 
     companion object {
@@ -138,6 +150,24 @@ class Config {
                         name(Component.translatable("config.qol27.carpets.sneak_overrides.name"))
                         description(OptionDescription.of(Component.translatable("config.qol27.carpets.sneak_overrides.description")))
                         binding(handler.instance()::carpetsSneakOverrides, true)
+                        controller(tickBox())
+                    }
+                }
+
+                groups.register("respawn_anchors") {
+                    name(Component.translatable("config.qol27.respawn_anchors.name"))
+                    description(OptionDescription.of(Component.translatable("config.qol27.respawn_anchors.description")))
+
+                    options.register<Boolean>("respawn_anchor_detection_enabled") {
+                        name(Component.translatable("config.qol27.respawn_anchors.enabled.name"))
+                        description(OptionDescription.of(Component.translatable("config.qol27.respawn_anchors.enabled.description")))
+                        binding(handler.instance()::respawnAnchorDetection, true)
+                        controller(tickBox())
+                    }
+                    options.register<Boolean>("respawn_anchor_sneak_overrides") {
+                        name(Component.translatable("config.qol27.respawn_anchors.sneak_overrides.name"))
+                        description(OptionDescription.of(Component.translatable("config.qol27.respawn_anchors.sneak_overrides.description")))
+                        binding(handler.instance()::respawnAnchorSneakOverrides, true)
                         controller(tickBox())
                     }
                 }

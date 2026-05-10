@@ -2,9 +2,9 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "2.4.0-Beta1"
+    kotlin("jvm") version "2.4.0-Beta2"
     id("net.fabricmc.fabric-loom") version "1.16-SNAPSHOT"
-    kotlin("plugin.serialization") version "2.4.0-Beta1"
+    kotlin("plugin.serialization") version "2.4.0-Beta2"
     id("maven-publish")
 }
 
