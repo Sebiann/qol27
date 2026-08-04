@@ -2,9 +2,9 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "2.4.0-Beta2"
-    id("net.fabricmc.fabric-loom") version "1.16-SNAPSHOT"
-    kotlin("plugin.serialization") version "2.4.0-Beta2"
+    alias(libs.plugins.kotlin.jvm)
+    alias(libs.plugins.fabric.loom)
+    alias(libs.plugins.kotlin.serialization)
     id("maven-publish")
 }
 
@@ -45,33 +45,33 @@ repositories {
 }
 
 dependencies {
-    minecraft("com.mojang:minecraft:${project.property("minecraft_version")}")
-    implementation("net.fabricmc:fabric-loader:${project.property("loader_version")}")
-    implementation("net.fabricmc:fabric-language-kotlin:${project.property("kotlin_loader_version")}")
+    minecraft(libs.minecraft)
+    implementation(libs.fabric.loader)
+    implementation(libs.fabric.language.kotlin)
 
-    implementation("net.fabricmc.fabric-api:fabric-api:${project.property("fabric_version")}")
-    implementation("dev.isxander:yet-another-config-lib:${project.property("yacl_version")}")
-    implementation("com.terraformersmc:modmenu:${project.property("modmenu_version")}")
+    implementation(libs.fabric.api)
+    implementation(libs.yacl)
+    implementation(libs.modmenu)
 
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.11.0")
-    compileOnlyApi("org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.10.2")
+    implementation(libs.kotlinx.serialization.json)
+    compileOnlyApi(libs.kotlinx.coroutines)
 
-    implementation("com.twelvemonkeys.imageio:imageio-webp:3.12.0")
+    implementation(libs.imageio.webp)
 }
 
 tasks.processResources {
     inputs.property("version", project.version)
-    inputs.property("minecraft_version", project.property("minecraft_version"))
-    inputs.property("loader_version", project.property("loader_version"))
+    inputs.property("minecraft_version", libs.versions.minecraft.get())
+    inputs.property("loader_version", libs.versions.fabric.loader.get())
     filteringCharset = "UTF-8"
 
     filesMatching("fabric.mod.json") {
         expand(
             "version" to project.version,
-            "minecraft_version" to project.property("minecraft_version").toString(),
-            "loader_version" to project.property("loader_version").toString(),
-            "kotlin_loader_version" to project.property("kotlin_loader_version").toString(),
-            "yacl_version" to project.property("yacl_version").toString()
+            "minecraft_version" to libs.versions.minecraft.get(),
+            "loader_version" to libs.versions.fabric.loader.get(),
+            "kotlin_loader_version" to libs.versions.kotlin.loader.get(),
+            "yacl_version" to libs.versions.yacl.get()
         )
     }
 }
