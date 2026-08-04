@@ -52,39 +52,39 @@ object NoSilkDetection {
         return block == Blocks.GLASS ||
             block == Blocks.TINTED_GLASS ||
             // Stained glass blocks
-            block == Blocks.WHITE_STAINED_GLASS ||
-            block == Blocks.LIGHT_GRAY_STAINED_GLASS ||
-            block == Blocks.GRAY_STAINED_GLASS ||
-            block == Blocks.BLACK_STAINED_GLASS ||
-            block == Blocks.BROWN_STAINED_GLASS ||
-            block == Blocks.RED_STAINED_GLASS ||
-            block == Blocks.ORANGE_STAINED_GLASS ||
-            block == Blocks.YELLOW_STAINED_GLASS ||
-            block == Blocks.LIME_STAINED_GLASS ||
-            block == Blocks.GREEN_STAINED_GLASS ||
-            block == Blocks.CYAN_STAINED_GLASS ||
-            block == Blocks.LIGHT_BLUE_STAINED_GLASS ||
-            block == Blocks.BLUE_STAINED_GLASS ||
-            block == Blocks.PURPLE_STAINED_GLASS ||
-            block == Blocks.MAGENTA_STAINED_GLASS ||
-            block == Blocks.PINK_STAINED_GLASS ||
+            block == Blocks.STAINED_GLASS.white ||
+            block == Blocks.STAINED_GLASS.lightGray ||
+            block == Blocks.STAINED_GLASS.gray ||
+            block == Blocks.STAINED_GLASS.black ||
+            block == Blocks.STAINED_GLASS.brown ||
+            block == Blocks.STAINED_GLASS.red ||
+            block == Blocks.STAINED_GLASS.orange ||
+            block == Blocks.STAINED_GLASS.yellow ||
+            block == Blocks.STAINED_GLASS.lime ||
+            block == Blocks.STAINED_GLASS.green ||
+            block == Blocks.STAINED_GLASS.cyan ||
+            block == Blocks.STAINED_GLASS.lightBlue ||
+            block == Blocks.STAINED_GLASS.blue ||
+            block == Blocks.STAINED_GLASS.purple ||
+            block == Blocks.STAINED_GLASS.magenta ||
+            block == Blocks.STAINED_GLASS.pink ||
             // Glass panes
             block == Blocks.GLASS_PANE ||
-            block == Blocks.WHITE_STAINED_GLASS_PANE ||
-            block == Blocks.LIGHT_GRAY_STAINED_GLASS_PANE ||
-            block == Blocks.GRAY_STAINED_GLASS_PANE ||
-            block == Blocks.BLACK_STAINED_GLASS_PANE ||
-            block == Blocks.BROWN_STAINED_GLASS_PANE ||
-            block == Blocks.RED_STAINED_GLASS_PANE ||
-            block == Blocks.ORANGE_STAINED_GLASS_PANE ||
-            block == Blocks.YELLOW_STAINED_GLASS_PANE ||
-            block == Blocks.LIME_STAINED_GLASS_PANE ||
-            block == Blocks.GREEN_STAINED_GLASS_PANE ||
-            block == Blocks.CYAN_STAINED_GLASS_PANE ||
-            block == Blocks.LIGHT_BLUE_STAINED_GLASS_PANE ||
-            block == Blocks.BLUE_STAINED_GLASS_PANE ||
-            block == Blocks.PURPLE_STAINED_GLASS_PANE ||
-            block == Blocks.MAGENTA_STAINED_GLASS_PANE ||
-            block == Blocks.PINK_STAINED_GLASS_PANE
+            block == Blocks.STAINED_GLASS_PANE.white ||
+            block == Blocks.STAINED_GLASS_PANE.lightGray ||
+            block == Blocks.STAINED_GLASS_PANE.gray ||
+            block == Blocks.STAINED_GLASS_PANE.black ||
+            block == Blocks.STAINED_GLASS_PANE.brown ||
+            block == Blocks.STAINED_GLASS_PANE.red ||
+            block == Blocks.STAINED_GLASS_PANE.orange ||
+            block == Blocks.STAINED_GLASS_PANE.yellow ||
+            block == Blocks.STAINED_GLASS_PANE.lime ||
+            block == Blocks.STAINED_GLASS_PANE.green ||
+            block == Blocks.STAINED_GLASS_PANE.cyan ||
+            block == Blocks.STAINED_GLASS_PANE.lightBlue ||
+            block == Blocks.STAINED_GLASS_PANE.blue ||
+            block == Blocks.STAINED_GLASS_PANE.purple ||
+            block == Blocks.STAINED_GLASS_PANE.magenta ||
+            block == Blocks.STAINED_GLASS_PANE.pink
     }
 }

@@ -39,21 +39,21 @@ object CarpetSafety {
     }
 
     private val CARPET_ITEMS: MutableSet<Item?> = Stream.of<Block?>(
-        Blocks.WHITE_CARPET,
-        Blocks.LIGHT_GRAY_CARPET,
-        Blocks.GRAY_CARPET,
-        Blocks.BLACK_CARPET,
-        Blocks.BROWN_CARPET,
-        Blocks.ORANGE_CARPET,
-        Blocks.MAGENTA_CARPET,
-        Blocks.LIGHT_BLUE_CARPET,
-        Blocks.YELLOW_CARPET,
-        Blocks.LIME_CARPET,
-        Blocks.PINK_CARPET,
-        Blocks.CYAN_CARPET,
-        Blocks.PURPLE_CARPET,
-        Blocks.BLUE_CARPET,
-        Blocks.GREEN_CARPET,
-        Blocks.RED_CARPET
+        Blocks.CARPET.white,
+        Blocks.CARPET.lightGray,
+        Blocks.CARPET.gray,
+        Blocks.CARPET.black,
+        Blocks.CARPET.brown,
+        Blocks.CARPET.orange,
+        Blocks.CARPET.magenta,
+        Blocks.CARPET.lightBlue,
+        Blocks.CARPET.yellow,
+        Blocks.CARPET.lime,
+        Blocks.CARPET.pink,
+        Blocks.CARPET.cyan,
+        Blocks.CARPET.purple,
+        Blocks.CARPET.blue,
+        Blocks.CARPET.green,
+        Blocks.CARPET.red
     ).map<Item?> { obj: Block? -> obj!!.asItem() }.collect(Collectors.toSet())
 }
