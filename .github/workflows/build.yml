@@ -39,6 +39,3 @@ jobs:
           name: ${{ inputs.version }}
           version: ${{ inputs.version }}
           changelog: ${{ inputs.changelog || 'Automated build' }}
-
-          game-versions: |
-            26.1.2
