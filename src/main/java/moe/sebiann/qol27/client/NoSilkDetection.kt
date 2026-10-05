@@ -30,7 +30,7 @@ object NoSilkDetection {
                 }
             }
             // Check for Glass blocks
-            else if (isGlassBlock(block) && Config.SilkTouch.glass) {
+            else if (GLASS_BLOCKS.contains(block) && Config.SilkTouch.glass) {
                 if (enchantments.contains("silk_touch")) {
                     InteractionResult.PASS
                 } else {
@@ -48,43 +48,11 @@ object NoSilkDetection {
         }
     }
 
-    private fun isGlassBlock(block: Block): Boolean {
-        return block == Blocks.GLASS ||
-            block == Blocks.TINTED_GLASS ||
-            // Stained glass blocks
-            block == Blocks.STAINED_GLASS.white ||
-            block == Blocks.STAINED_GLASS.lightGray ||
-            block == Blocks.STAINED_GLASS.gray ||
-            block == Blocks.STAINED_GLASS.black ||
-            block == Blocks.STAINED_GLASS.brown ||
-            block == Blocks.STAINED_GLASS.red ||
-            block == Blocks.STAINED_GLASS.orange ||
-            block == Blocks.STAINED_GLASS.yellow ||
-            block == Blocks.STAINED_GLASS.lime ||
-            block == Blocks.STAINED_GLASS.green ||
-            block == Blocks.STAINED_GLASS.cyan ||
-            block == Blocks.STAINED_GLASS.lightBlue ||
-            block == Blocks.STAINED_GLASS.blue ||
-            block == Blocks.STAINED_GLASS.purple ||
-            block == Blocks.STAINED_GLASS.magenta ||
-            block == Blocks.STAINED_GLASS.pink ||
-            // Glass panes
-            block == Blocks.GLASS_PANE ||
-            block == Blocks.STAINED_GLASS_PANE.white ||
-            block == Blocks.STAINED_GLASS_PANE.lightGray ||
-            block == Blocks.STAINED_GLASS_PANE.gray ||
-            block == Blocks.STAINED_GLASS_PANE.black ||
-            block == Blocks.STAINED_GLASS_PANE.brown ||
-            block == Blocks.STAINED_GLASS_PANE.red ||
-            block == Blocks.STAINED_GLASS_PANE.orange ||
-            block == Blocks.STAINED_GLASS_PANE.yellow ||
-            block == Blocks.STAINED_GLASS_PANE.lime ||
-            block == Blocks.STAINED_GLASS_PANE.green ||
-            block == Blocks.STAINED_GLASS_PANE.cyan ||
-            block == Blocks.STAINED_GLASS_PANE.lightBlue ||
-            block == Blocks.STAINED_GLASS_PANE.blue ||
-            block == Blocks.STAINED_GLASS_PANE.purple ||
-            block == Blocks.STAINED_GLASS_PANE.magenta ||
-            block == Blocks.STAINED_GLASS_PANE.pink
+    private val GLASS_BLOCKS: Set<Block> = buildSet {
+        add(Blocks.GLASS)
+        add(Blocks.TINTED_GLASS)
+        add(Blocks.GLASS_PANE)
+        addAll(Blocks.STAINED_GLASS.asList())
+        addAll(Blocks.STAINED_GLASS_PANE.asList())
     }
 }

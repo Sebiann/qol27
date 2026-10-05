@@ -28,7 +28,7 @@ class QoL27Client : ClientModInitializer {
         toggleFullbrightKey = KeyMappingHelper.registerKeyMapping(
             KeyMapping(
                 "key.qol27.toggle_fullbright",
-                InputConstants.Type.KEYSYM,
+                InputConstants.Type.KEYBOARD,
                 InputConstants.UNKNOWN.value,
                 QOL27_CATEGORY
             )
